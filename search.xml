@@ -5,7 +5,9 @@
     <entry>
       <title><![CDATA[my artices]]></title>
       <url>/2017/08/02/my-artices/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<p>你好，这是一个测试。<br><a id="more"></a></p>
+<p>这是打开阅读更多的文章测试</p>
+]]></content>
       
         
     </entry>
