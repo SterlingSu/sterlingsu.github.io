@@ -3,6 +3,20 @@
   
     
     <entry>
+      <title><![CDATA[article]]></title>
+      <url>/2017/08/25/article/</url>
+      <content type="html"></content>
+      
+        <categories>
+            
+            <category> 前端 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[my artices]]></title>
       <url>/2017/08/02/my-artices/</url>
       <content type="html"><![CDATA[<p>你好，这是一个测试。<br><a id="more"></a></p>
@@ -17,6 +31,22 @@
       <url>/2017/08/02/test/</url>
       <content type="html"></content>
       
+        <categories>
+            
+            <category> Test </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> testing </tag>
+            
+            <tag> appium </tag>
+            
+            <tag> ster </tag>
+            
+        </tags>
         
     </entry>
     
