@@ -371,9 +371,16 @@ table tr:first-of-type {
     </entry>
     
     <entry>
-      <title><![CDATA[代码测试]]></title>
-      <url>/2017/08/02/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</url>
-      <content type="html"><![CDATA[<h2 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a>代码测试</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;  </span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span>   <span class="comment">/*  辗转相除法求最大公约数 */</span>   </span></div><div class="line"><span class="function"></span>&#123;   </div><div class="line">    <span class="keyword">int</span> m, n, a, b, t, c;  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Input two integer numbers:\n"</span>);  </div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b);  </div><div class="line">    m=a;   n=b;  </div><div class="line">    <span class="keyword">while</span>(b!=<span class="number">0</span>)  <span class="comment">/* 余数不为0，继续相除，直到余数为0 */</span>   </div><div class="line">    &#123; c=a%b; a=b;  b=c;&#125;  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"The largest common divisor:%d\n"</span>, a);  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"The least common multiple:%d\n"</span>, m*n/a);  </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+      <title><![CDATA[视频测试]]></title>
+      <url>/2017/08/02/%E6%B5%8B%E8%AF%95%E8%A7%86%E9%A2%91/</url>
+      <content type="html"><![CDATA[<embed src="https://play.wasu.cn/CACk.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="100%">
+
+
+
+
+
+
+
 ]]></content>
       
         <categories>
@@ -396,16 +403,9 @@ table tr:first-of-type {
     </entry>
     
     <entry>
-      <title><![CDATA[视频测试]]></title>
-      <url>/2017/08/02/%E6%B5%8B%E8%AF%95%E8%A7%86%E9%A2%91/</url>
-      <content type="html"><![CDATA[<embed src="https://play.wasu.cn/CACk.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="100%">
-
-
-
-
-
-
-
+      <title><![CDATA[代码测试]]></title>
+      <url>/2017/08/02/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</url>
+      <content type="html"><![CDATA[<h2 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a>代码测试</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;  </span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span>   <span class="comment">/*  辗转相除法求最大公约数 */</span>   </span></div><div class="line"><span class="function"></span>&#123;   </div><div class="line">    <span class="keyword">int</span> m, n, a, b, t, c;  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Input two integer numbers:\n"</span>);  </div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b);  </div><div class="line">    m=a;   n=b;  </div><div class="line">    <span class="keyword">while</span>(b!=<span class="number">0</span>)  <span class="comment">/* 余数不为0，继续相除，直到余数为0 */</span>   </div><div class="line">    &#123; c=a%b; a=b;  b=c;&#125;  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"The largest common divisor:%d\n"</span>, a);  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"The least common multiple:%d\n"</span>, m*n/a);  </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
 ]]></content>
       
         <categories>
