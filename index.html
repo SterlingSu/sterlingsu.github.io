@@ -320,6 +320,211 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/25/python-API/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sterling">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sterling’s Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/25/python-API/" itemprop="url">Python 调用和风天气 API 查询各个城市天气</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-25T20:03:02+08:00">
+                2017-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/10/25/python-API/" class="leancloud_visitors" data-flag-title="Python 调用和风天气 API 查询各个城市天气">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="和风天气-API-接口介绍"><a href="#和风天气-API-接口介绍" class="headerlink" title="和风天气 API 接口介绍"></a>和风天气 API 接口介绍</h3><h4 id="接口地址"><a href="#接口地址" class="headerlink" title="接口地址"></a>接口地址</h4><table>
+<thead>
+<tr>
+<th>#</th>
+<th>服务器节点</th>
+<th>接口地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>免费</td>
+<td>中国</td>
+<td><a href="https://free-api.heweather.com/v5/" target="_blank" rel="external">https://free-api.heweather.com/v5/</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="请求实例"><a href="#请求实例" class="headerlink" title="请求实例"></a>请求实例</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>选择</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>city</td>
+<td>城市名称，city可通过城市中英文名称、ID、IP和经纬度进行查询，经纬度查询格式为：经度,纬度</td>
+<td>必选</td>
+<td>city=北京，city=beijing，city=CN101010100，city= 60.194.130.1，city=120.343,36.088</td>
+</tr>
+<tr>
+<td>key</td>
+<td>用户认证key</td>
+<td>必选</td>
+<td>your key</td>
+</tr>
+<tr>
+<td>lang</td>
+<td>多语言，可以不使用该参数，默认为中文</td>
+<td>可选</td>
+<td>详见多语言参数值</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://free-api.heweather.com/v5/weather?city=CN101010100&amp;key=yourkey" target="_blank" rel="external">https://free-api.heweather.com/v5/weather?city=CN101010100&amp;key=yourkey</a><br>和风天气支持多语言，可以使用lang参数在调用数据时设定需要的语言。比如：<br><a href="https://free-api.heweather.com/v5/weather?city=CN101010100&amp;key=你的key&amp;lang=en" target="_blank" rel="external">https://free-api.heweather.com/v5/weather?city=CN101010100&amp;key=你的key&amp;lang=en</a></p>
+<p>默认国内城市采用简体中文，海外城市采用英文，默认状态不用添加lang参数。</p>
+<h4 id="数据返回实例"><a href="#数据返回实例" class="headerlink" title="数据返回实例"></a>数据返回实例</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"HeWeather5"</span>: [</div><div class="line">        &#123;</div><div class="line">            <span class="string">"alarms"</span>: [</div><div class="line">                &#123;</div><div class="line">                    <span class="string">"level"</span>: <span class="string">"蓝色"</span>,</div><div class="line">                    <span class="string">"stat"</span>: <span class="string">"预警中"</span>,</div><div class="line">                    <span class="string">"title"</span>: <span class="string">"山东省青岛市气象台发布大风蓝色预警"</span>,</div><div class="line">                    <span class="string">"txt"</span>: <span class="string">"青岛市气象台2016年08月29日15时24分继续发布大风蓝色预警信号：预计今天下午到明天，我市北风风力海上6到7级阵风9级，陆地4到5阵风7级，请注意防范。"</span>,</div><div class="line">                    <span class="string">"type"</span>: <span class="string">"大风"</span></div><div class="line">                &#125;</div><div class="line">            ],</div><div class="line">            <span class="string">"aqi"</span>: &#123;</div><div class="line">                <span class="string">"city"</span>: &#123;</div><div class="line">                    <span class="string">"aqi"</span>: <span class="string">"60"</span>,</div><div class="line">                    <span class="string">"co"</span>: <span class="string">"0"</span>,</div><div class="line">                    <span class="string">"no2"</span>: <span class="string">"14"</span>,</div><div class="line">                    <span class="string">"o3"</span>: <span class="string">"95"</span>,</div><div class="line">                    <span class="string">"pm10"</span>: <span class="string">"67"</span>,</div><div class="line">                    <span class="string">"pm25"</span>: <span class="string">"15"</span>,</div><div class="line">                    <span class="string">"qlty"</span>: <span class="string">"良"</span>,  //共六个级别，分别：优，良，轻度污染，中度污染，重度污染，严重污染</div><div class="line">                    <span class="string">"so2"</span>: <span class="string">"10"</span></div><div class="line">                &#125;</div><div class="line">            &#125;,</div></pre></td></tr></table></figure>
+<h4 id="源程序"><a href="#源程序" class="headerlink" title="源程序"></a>源程序</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> urllib2, json</div><div class="line"><span class="keyword">import</span> requests</div><div class="line"></div><div class="line"><span class="comment">#调用和风天气的API city可以通过https://cdn.heweather.com/china-city-list.txt城市列表获取</span></div><div class="line"></div><div class="line">appkey = <span class="string">'2edd11dc019b43b2bd53406f5e255a41'</span></div><div class="line">cityName = raw_input(<span class="string">'请输入查询的地名：'</span>)</div><div class="line"><span class="keyword">print</span> cityName</div><div class="line">value = &#123;<span class="string">'city'</span>: cityName,</div><div class="line">         <span class="string">'key'</span>: appkey,</div><div class="line">         &#125;</div><div class="line">url = <span class="string">'https://free-api.heweather.com/v5/weather'</span></div><div class="line">s = requests.get(url, params=value)</div><div class="line"><span class="keyword">print</span> s.url</div><div class="line">url = s.url</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 用urllib2创建一个请求并得到返回结果</span></div><div class="line">req = urllib2.Request(url)</div><div class="line">resp = urllib2.urlopen(req).read()</div><div class="line"><span class="comment"># print resp</span></div><div class="line"><span class="comment"># print type(resp)</span></div><div class="line"></div><div class="line"><span class="comment"># 将JSON转化为Python的数据结构</span></div><div class="line">json_data = json.loads(resp)</div><div class="line">city_data = json_data[<span class="string">'HeWeather5'</span>][<span class="number">0</span>]</div><div class="line">hourly_data = json_data[<span class="string">'HeWeather5'</span>][<span class="number">0</span>][<span class="string">'hourly_forecast'</span>]</div><div class="line">daily_data = json_data[<span class="string">'HeWeather5'</span>][<span class="number">0</span>][<span class="string">'daily_forecast'</span>]</div><div class="line"><span class="comment"># print json_data</span></div><div class="line"><span class="keyword">print</span> <span class="string">u'当前时间：'</span> + daily_data[<span class="number">0</span>][<span class="string">'date'</span>]</div><div class="line"><span class="keyword">print</span> <span class="string">u'城市：'</span> + city_data[<span class="string">'basic'</span>][<span class="string">'city'</span>]</div><div class="line"><span class="keyword">print</span> <span class="string">u'PM指数：'</span> + city_data[<span class="string">'aqi'</span>][<span class="string">'city'</span>][<span class="string">'pm25'</span>]</div><div class="line"><span class="keyword">print</span> <span class="string">u'白天天气：'</span> + daily_data[<span class="number">0</span>][<span class="string">'cond'</span>][<span class="string">'txt_d'</span>]</div><div class="line"><span class="keyword">print</span> <span class="string">u'夜间天气：'</span> + daily_data[<span class="number">0</span>][<span class="string">'cond'</span>][<span class="string">'txt_n'</span>]</div><div class="line"><span class="keyword">print</span> <span class="string">u'今天&#123;0&#125;: 气温：&#123;1&#125;°/&#123;2&#125;°'</span>.format(str(daily_data[<span class="number">0</span>][<span class="string">'date'</span>]), daily_data[<span class="number">0</span>][<span class="string">'tmp'</span>][<span class="string">'min'</span>],</div><div class="line">                                    daily_data[<span class="number">0</span>][<span class="string">'tmp'</span>][<span class="string">'max'</span>])</div><div class="line"><span class="keyword">print</span> <span class="string">u'未来小时天气：&#123;0&#125; &#123;1&#125;'</span>.format(str(hourly_data[<span class="number">0</span>][<span class="string">'date'</span>]).split()[<span class="number">1</span>], hourly_data[<span class="number">0</span>][<span class="string">'cond'</span>][<span class="string">'txt'</span>])</div><div class="line"><span class="keyword">print</span> <span class="string">u'未来小时天气：&#123;0&#125; &#123;1&#125;'</span>.format(str(hourly_data[<span class="number">1</span>][<span class="string">'date'</span>]).split()[<span class="number">1</span>], hourly_data[<span class="number">1</span>][<span class="string">'cond'</span>][<span class="string">'txt'</span>])</div><div class="line"><span class="keyword">print</span> <span class="string">u'未来小时天气：&#123;0&#125; &#123;1&#125;'</span>.format(str(hourly_data[<span class="number">2</span>][<span class="string">'date'</span>]).split()[<span class="number">1</span>], hourly_data[<span class="number">2</span>][<span class="string">'cond'</span>][<span class="string">'txt'</span>])</div><div class="line"><span class="keyword">print</span> <span class="string">u'未来&#123;0&#125; 天气：&#123;1&#125;°/&#123;2&#125;°'</span>.format(daily_data[<span class="number">1</span>][<span class="string">'date'</span>], daily_data[<span class="number">1</span>][<span class="string">'tmp'</span>][<span class="string">'min'</span>], daily_data[<span class="number">1</span>][<span class="string">'tmp'</span>][<span class="string">'max'</span>])</div><div class="line"><span class="keyword">print</span> <span class="string">u'未来&#123;0&#125; 天气：&#123;1&#125;°/&#123;2&#125;°'</span>.format(daily_data[<span class="number">2</span>][<span class="string">'date'</span>], daily_data[<span class="number">1</span>][<span class="string">'tmp'</span>][<span class="string">'min'</span>], daily_data[<span class="number">2</span>][<span class="string">'tmp'</span>][<span class="string">'max'</span>])</div><div class="line"><span class="keyword">print</span> <span class="string">u'穿衣建议：'</span> + json_data[<span class="string">'HeWeather5'</span>][<span class="number">0</span>][<span class="string">'suggestion'</span>][<span class="string">'drsg'</span>][<span class="string">'txt'</span>]</div></pre></td></tr></table></figure>
+<h4 id="运行截图"><a href="#运行截图" class="headerlink" title="运行截图"></a>运行截图</h4><p><img src="http://ot86l2rm2.bkt.clouddn.com/17-10-25/51657758.jpg" alt=""></p>
+<h4 id="Chrome插件-JSON-handle"><a href="#Chrome插件-JSON-handle" class="headerlink" title="Chrome插件-JSON-handle"></a>Chrome插件-JSON-handle</h4><p><img src="http://ot86l2rm2.bkt.clouddn.com/17-10-25/13845195.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/15/BadGenius/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1018,166 +1223,6 @@ table tr:first-of-type {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/30/上海二日/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sterling">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sterling’s Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/30/上海二日/" itemprop="url">上海两日</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-30T10:42:02+08:00">
-                2017-08-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/二三事/" itemprop="url" rel="index">
-                    <span itemprop="name">二三事</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/08/30/上海二日/" class="leancloud_visitors" data-flag-title="上海两日">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>随着8.24 在上海海事大厦张榜公布成绩后，我这个夏天的考试计划正式完结了。成绩如下：</p>
-<p><img src="http://ot86l2rm2.bkt.clouddn.com/WeChat%20%E5%9C%96%E7%89%87_20170825102055.jpg" alt="考试成绩单"></p>
-<p>结果还是挺让人感到意外的。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/30/上海二日/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1228,7 +1273,7 @@ table tr:first-of-type {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1239,7 +1284,7 @@ table tr:first-of-type {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -1250,7 +1295,7 @@ table tr:first-of-type {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
