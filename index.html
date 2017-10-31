@@ -320,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/25/Jmeter-API/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/Jmeter-API/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sterling">
@@ -339,7 +339,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/25/Jmeter-API/" itemprop="url">JMeter API Testing Basics查询各大城市天气情况</a></h1>
+                <a class="post-title-link" href="/2017/10/31/Jmeter-API/" itemprop="url">JMeter API Testing Basics查询各大城市天气情况</a></h1>
         
 
         <div class="post-meta">
@@ -351,8 +351,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-25T20:03:02+08:00">
-                2017-10-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T14:22:02+08:00">
+                2017-10-31
               </time>
             
 
@@ -391,7 +391,7 @@
 
           
           
-             <span id="/2017/10/25/Jmeter-API/" class="leancloud_visitors" data-flag-title="JMeter API Testing Basics查询各大城市天气情况">
+             <span id="/2017/10/31/Jmeter-API/" class="leancloud_visitors" data-flag-title="JMeter API Testing Basics查询各大城市天气情况">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -424,35 +424,15 @@
 
       
         
-          
-            <h3 id="API-Keys"><a href="#API-Keys" class="headerlink" title="API Keys"></a>API Keys</h3><p>First off, we’ll need an API Key from the Open Weather API.</p>
-<p>You can quickly get a free Open Weather API key by creating a basic account on their signup page.<a href="https://home.openweathermap.org/" target="_blank" rel="external">https://home.openweathermap.org/</a></p>
-<p><img src="http://ot86l2rm2.bkt.clouddn.com/apikey.PNG" alt=""><br><img src="http://ot86l2rm2.bkt.clouddn.com/WeatherAPI.PNG" alt=""></p>
-<h3 id="Break-the-API"><a href="#Break-the-API" class="headerlink" title="Break the API"></a>Break the API</h3><blockquote>
-<p>Examples of API calls:<br>api.openweathermap.org/data/2.5/weather?q=London,uk&amp;appid=xxxxxxxxxxx</p>
-</blockquote>
-<p id="div-border-left-red"><br><br>Protocol-http<br><br><br>IP———api.openweathermap.org<br><br><br>Path-——/data/2.5/weather  # this is before Question mark<br><br><br></p>
-
-<p id="div-border-left-red">
-
-</p><p>parameters-</p>
-<p>q=suzhou</p>
-<p>appid=4e0f6be15c95005cfa5820249166033a</p>
-<p></p><p></p>
-<h3 id="Create-Http-Request-in-Jmeter"><a href="#Create-Http-Request-in-Jmeter" class="headerlink" title="Create Http Request in Jmeter"></a>Create Http Request in Jmeter</h3><p><img src="http://ot86l2rm2.bkt.clouddn.com/httpRequest.PNG" alt=""></p>
-<h3 id="Add-a-Listener"><a href="#Add-a-Listener" class="headerlink" title="Add a Listener"></a>Add a Listener</h3><p>Before running we need to add a listener.Listener would show the request and the respense.</p>
-<p>Right click on the TestPlan &gt; Select Listener &gt; Add Results in a Tree Listener<br><img src="http://ot86l2rm2.bkt.clouddn.com/viewResultTree.PNG" alt=""></p>
-<h3 id="run-the-plan"><a href="#run-the-plan" class="headerlink" title="run the plan"></a>run the plan</h3><p>green means that you have got a success.<br>So here you see the request made was-</p>
-<p><strong>GET</strong><br> <a href="http://api.openweathermap.org/data/2.5/weather?q=suzhou&amp;appid=4e0f6be15c95005cfa5820249166033a" target="_blank" rel="external">http://api.openweathermap.org/data/2.5/weather?q=suzhou&amp;appid=4e0f6be15c95005cfa5820249166033a</a></p>
-<p><strong>Respons</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">:   <span class="string">"coord"</span>:</div><div class="line">:   &#123;</div><div class="line">:   :   <span class="string">"lon"</span>:<span class="number">120.62</span>,</div><div class="line">:   :   <span class="string">"lat"</span>:<span class="number">31.31</span></div><div class="line">:   &#125;,</div><div class="line">:   <span class="string">"weather"</span>:</div><div class="line">:   [</div><div class="line">:   :   &#123;</div><div class="line">:   :   :   <span class="string">"id"</span>:<span class="number">800</span>,</div><div class="line">:   :   :   <span class="string">"main"</span>:<span class="string">"Clear"</span>,</div><div class="line">:   :   :   <span class="string">"description"</span>:<span class="string">"clear sky"</span>,</div><div class="line">:   :   :   <span class="string">"icon"</span>:<span class="string">"01d"</span></div><div class="line">:   :   &#125;</div><div class="line">:   ],</div><div class="line">:   <span class="string">"base"</span>:<span class="string">"stations"</span>,</div><div class="line">:   <span class="string">"main"</span>:</div><div class="line">:   &#123;</div><div class="line">:   :   <span class="string">"temp"</span>:<span class="number">292.15</span>,</div><div class="line">:   :   <span class="string">"pressure"</span>:<span class="number">1027</span>,</div><div class="line">:   :   <span class="string">"humidity"</span>:<span class="number">42</span>,</div><div class="line">:   :   <span class="string">"temp_min"</span>:<span class="number">292.15</span>,</div><div class="line">:   :   <span class="string">"temp_max"</span>:<span class="number">292.15</span></div><div class="line">:   &#125;,</div><div class="line">:   <span class="string">"visibility"</span>:<span class="number">10000</span>,</div><div class="line">:   <span class="string">"wind"</span>:</div><div class="line">:   &#123;</div><div class="line">:   :   <span class="string">"speed"</span>:<span class="number">2</span>,</div><div class="line">:   :   <span class="string">"deg"</span>:<span class="number">170</span></div><div class="line">:   &#125;,</div><div class="line">:   <span class="string">"clouds"</span>:</div><div class="line">:   &#123;</div><div class="line">:   :   <span class="string">"all"</span>:<span class="number">0</span></div><div class="line">:   &#125;,</div><div class="line">:   <span class="string">"dt"</span>:<span class="number">1509418800</span>,</div><div class="line">:   <span class="string">"sys"</span>:</div><div class="line">:   &#123;</div><div class="line">:   :   <span class="string">"type"</span>:<span class="number">1</span>,</div><div class="line">:   :   <span class="string">"id"</span>:<span class="number">7452</span>,</div><div class="line">:   :   <span class="string">"message"</span>:<span class="number">0.0049</span>,</div><div class="line">:   :   <span class="string">"country"</span>:<span class="string">"CN"</span>,</div><div class="line">:   :   <span class="string">"sunrise"</span>:<span class="number">1509401534</span>,</div><div class="line">:   :   <span class="string">"sunset"</span>:<span class="number">1509440973</span></div><div class="line">:   &#125;,</div><div class="line">:   <span class="string">"id"</span>:<span class="number">1886760</span>,</div><div class="line">:   <span class="string">"name"</span>:<span class="string">"Suzhou"</span>,</div><div class="line">:   <span class="string">"cod"</span>:<span class="number">200</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><img src="http://ot86l2rm2.bkt.clouddn.com/runThePlan.PNG" alt=""></p>
-<h3 id="Put-an-assertion"><a href="#Put-an-assertion" class="headerlink" title="Put an assertion"></a>Put an assertion</h3><p>in the respense you need to get type=1 for this test case to pass.</p>
-<p>Right click  on the Test plan and from the assertion list select Response Assertion.</p>
-<p>From the response select - “type”:1 and add this to the response assertion.</p>
-<p>Now run the test plan again.<br><img src="http://ot86l2rm2.bkt.clouddn.com/assertion.PNG" alt=""></p>
-<p>You can also add an assertion listener to see the assertion results.then run it again.</p>
-
-          
+          <h3 id="API-Keys"><a href="#API-Keys" class="headerlink" title="API Keys"></a>API Keys</h3><p>First off, we’ll need an API Key from the Open Weather API.</p>
+<p>You can quickly get a free Open Weather API key by creating a basic account on their <a href="https://home.openweathermap.org/" target="_blank" rel="external">signup page</a>.<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/31/Jmeter-API/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

@@ -101,23 +101,23 @@
 
 
 
-<meta name="description" content="API KeysFirst off, we’ll need an API Key from the Open Weather API. You can quickly get a free Open Weather API key by creating a basic account on their signup page.https://home.openweathermap.org/  B">
+<meta name="description" content="API KeysFirst off, we’ll need an API Key from the Open Weather API. You can quickly get a free Open Weather API key by creating a basic account on their signup page.">
 <meta name="keywords" content="Jmeter,API,weather">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JMeter API Testing Basics查询各大城市天气情况">
-<meta property="og:url" content="http://yoursite.com/2017/10/25/Jmeter-API/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/10/31/Jmeter-API/index.html">
 <meta property="og:site_name" content="Sterling’s Blog">
-<meta property="og:description" content="API KeysFirst off, we’ll need an API Key from the Open Weather API. You can quickly get a free Open Weather API key by creating a basic account on their signup page.https://home.openweathermap.org/  B">
+<meta property="og:description" content="API KeysFirst off, we’ll need an API Key from the Open Weather API. You can quickly get a free Open Weather API key by creating a basic account on their signup page.">
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com/apikey.PNG">
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com/WeatherAPI.PNG">
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com/httpRequest.PNG">
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com/viewResultTree.PNG">
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com/runThePlan.PNG">
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com/assertion.PNG">
-<meta property="og:updated_time" content="2017-10-31T06:20:03.000Z">
+<meta property="og:updated_time" content="2017-10-31T06:25:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JMeter API Testing Basics查询各大城市天气情况">
-<meta name="twitter:description" content="API KeysFirst off, we’ll need an API Key from the Open Weather API. You can quickly get a free Open Weather API key by creating a basic account on their signup page.https://home.openweathermap.org/  B">
+<meta name="twitter:description" content="API KeysFirst off, we’ll need an API Key from the Open Weather API. You can quickly get a free Open Weather API key by creating a basic account on their signup page.">
 <meta name="twitter:image" content="http://ot86l2rm2.bkt.clouddn.com/apikey.PNG">
 
 
@@ -147,7 +147,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/25/Jmeter-API/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/31/Jmeter-API/"/>
 
 
 
@@ -330,7 +330,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/25/Jmeter-API/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/Jmeter-API/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sterling">
@@ -359,8 +359,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-25T20:03:02+08:00">
-                2017-10-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-31T14:22:02+08:00">
+                2017-10-31
               </time>
             
 
@@ -399,7 +399,7 @@
 
           
           
-             <span id="/2017/10/25/Jmeter-API/" class="leancloud_visitors" data-flag-title="JMeter API Testing Basics查询各大城市天气情况">
+             <span id="/2017/10/31/Jmeter-API/" class="leancloud_visitors" data-flag-title="JMeter API Testing Basics查询各大城市天气情况">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -432,19 +432,14 @@
 
       
         <h3 id="API-Keys"><a href="#API-Keys" class="headerlink" title="API Keys"></a>API Keys</h3><p>First off, we’ll need an API Key from the Open Weather API.</p>
-<p>You can quickly get a free Open Weather API key by creating a basic account on their signup page.<a href="https://home.openweathermap.org/" target="_blank" rel="external">https://home.openweathermap.org/</a></p>
-<p><img src="http://ot86l2rm2.bkt.clouddn.com/apikey.PNG" alt=""><br><img src="http://ot86l2rm2.bkt.clouddn.com/WeatherAPI.PNG" alt=""></p>
+<p>You can quickly get a free Open Weather API key by creating a basic account on their <a href="https://home.openweathermap.org/" target="_blank" rel="external">signup page</a>.<br><a id="more"></a><br><img src="http://ot86l2rm2.bkt.clouddn.com/apikey.PNG" alt=""><br><img src="http://ot86l2rm2.bkt.clouddn.com/WeatherAPI.PNG" alt=""></p>
 <h3 id="Break-the-API"><a href="#Break-the-API" class="headerlink" title="Break the API"></a>Break the API</h3><blockquote>
 <p>Examples of API calls:<br>api.openweathermap.org/data/2.5/weather?q=London,uk&amp;appid=xxxxxxxxxxx</p>
 </blockquote>
-<p id="div-border-left-red"><br><br>Protocol-http<br><br><br>IP———api.openweathermap.org<br><br><br>Path-——/data/2.5/weather  # this is before Question mark<br><br><br></p>
+<p id="div-border-left-red"><br>Protocol-http<br>IP———api.openweathermap.org<br>Path-——/data/2.5/weather  # this is before Question mark<br></p>
 
-<p id="div-border-left-red">
+<p id="div-border-left-red"><br>parameters-<br>q=suzhou<br>appid=4e0f6be15c95005cfa5820249166033a<br></p>
 
-</p><p>parameters-</p>
-<p>q=suzhou</p>
-<p>appid=4e0f6be15c95005cfa5820249166033a</p>
-<p></p><p></p>
 <h3 id="Create-Http-Request-in-Jmeter"><a href="#Create-Http-Request-in-Jmeter" class="headerlink" title="Create Http Request in Jmeter"></a>Create Http Request in Jmeter</h3><p><img src="http://ot86l2rm2.bkt.clouddn.com/httpRequest.PNG" alt=""></p>
 <h3 id="Add-a-Listener"><a href="#Add-a-Listener" class="headerlink" title="Add a Listener"></a>Add a Listener</h3><p>Before running we need to add a listener.Listener would show the request and the respense.</p>
 <p>Right click on the TestPlan &gt; Select Listener &gt; Add Results in a Tree Listener<br><img src="http://ot86l2rm2.bkt.clouddn.com/viewResultTree.PNG" alt=""></p>

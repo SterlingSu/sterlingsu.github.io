@@ -4,21 +4,16 @@
     
     <entry>
       <title><![CDATA[JMeter API Testing Basics查询各大城市天气情况]]></title>
-      <url>/2017/10/25/Jmeter-API/</url>
+      <url>/2017/10/31/Jmeter-API/</url>
       <content type="html"><![CDATA[<h3 id="API-Keys"><a href="#API-Keys" class="headerlink" title="API Keys"></a>API Keys</h3><p>First off, we’ll need an API Key from the Open Weather API.</p>
-<p>You can quickly get a free Open Weather API key by creating a basic account on their signup page.<a href="https://home.openweathermap.org/" target="_blank" rel="external">https://home.openweathermap.org/</a></p>
-<p><img src="http://ot86l2rm2.bkt.clouddn.com/apikey.PNG" alt=""><br><img src="http://ot86l2rm2.bkt.clouddn.com/WeatherAPI.PNG" alt=""></p>
+<p>You can quickly get a free Open Weather API key by creating a basic account on their <a href="https://home.openweathermap.org/" target="_blank" rel="external">signup page</a>.<br><a id="more"></a><br><img src="http://ot86l2rm2.bkt.clouddn.com/apikey.PNG" alt=""><br><img src="http://ot86l2rm2.bkt.clouddn.com/WeatherAPI.PNG" alt=""></p>
 <h3 id="Break-the-API"><a href="#Break-the-API" class="headerlink" title="Break the API"></a>Break the API</h3><blockquote>
 <p>Examples of API calls:<br>api.openweathermap.org/data/2.5/weather?q=London,uk&amp;appid=xxxxxxxxxxx</p>
 </blockquote>
-<p id="div-border-left-red"><br><br>Protocol-http<br><br><br>IP———api.openweathermap.org<br><br><br>Path-——/data/2.5/weather  # this is before Question mark<br><br><br></p>
+<p id="div-border-left-red"><br>Protocol-http<br>IP———api.openweathermap.org<br>Path-——/data/2.5/weather  # this is before Question mark<br></p>
 
-<p id="div-border-left-red">
+<p id="div-border-left-red"><br>parameters-<br>q=suzhou<br>appid=4e0f6be15c95005cfa5820249166033a<br></p>
 
-</p><p>parameters-</p>
-<p>q=suzhou</p>
-<p>appid=4e0f6be15c95005cfa5820249166033a</p>
-<p></p><p></p>
 <h3 id="Create-Http-Request-in-Jmeter"><a href="#Create-Http-Request-in-Jmeter" class="headerlink" title="Create Http Request in Jmeter"></a>Create Http Request in Jmeter</h3><p><img src="http://ot86l2rm2.bkt.clouddn.com/httpRequest.PNG" alt=""></p>
 <h3 id="Add-a-Listener"><a href="#Add-a-Listener" class="headerlink" title="Add a Listener"></a>Add a Listener</h3><p>Before running we need to add a listener.Listener would show the request and the respense.</p>
 <p>Right click on the TestPlan &gt; Select Listener &gt; Add Results in a Tree Listener<br><img src="http://ot86l2rm2.bkt.clouddn.com/viewResultTree.PNG" alt=""></p>
