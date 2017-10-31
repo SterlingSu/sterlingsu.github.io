@@ -320,6 +320,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/25/Jmeter-API/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sterling">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sterling’s Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/25/Jmeter-API/" itemprop="url">JMeter API Testing Basics查询各大城市天气情况</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-25T20:03:02+08:00">
+                2017-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jmeter/" itemprop="url" rel="index">
+                    <span itemprop="name">Jmeter</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/10/25/Jmeter-API/" class="leancloud_visitors" data-flag-title="JMeter API Testing Basics查询各大城市天气情况">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="API-Keys"><a href="#API-Keys" class="headerlink" title="API Keys"></a>API Keys</h3><p>First off, we’ll need an API Key from the Open Weather API.</p>
+<p>You can quickly get a free Open Weather API key by creating a basic account on their signup page.<a href="https://home.openweathermap.org/" target="_blank" rel="external">https://home.openweathermap.org/</a></p>
+<p><img src="http://ot86l2rm2.bkt.clouddn.com/apikey.PNG" alt=""><br><img src="http://ot86l2rm2.bkt.clouddn.com/WeatherAPI.PNG" alt=""></p>
+<h3 id="Break-the-API"><a href="#Break-the-API" class="headerlink" title="Break the API"></a>Break the API</h3><blockquote>
+<p>Examples of API calls:<br>api.openweathermap.org/data/2.5/weather?q=London,uk&amp;appid=xxxxxxxxxxx</p>
+</blockquote>
+<p id="div-border-left-red"><br><br>Protocol-http<br><br><br>IP———api.openweathermap.org<br><br><br>Path-——/data/2.5/weather  # this is before Question mark<br><br><br></p>
+
+<p id="div-border-left-red">
+
+</p><p>parameters-</p>
+<p>q=suzhou</p>
+<p>appid=4e0f6be15c95005cfa5820249166033a</p>
+<p></p><p></p>
+<h3 id="Create-Http-Request-in-Jmeter"><a href="#Create-Http-Request-in-Jmeter" class="headerlink" title="Create Http Request in Jmeter"></a>Create Http Request in Jmeter</h3><p><img src="http://ot86l2rm2.bkt.clouddn.com/httpRequest.PNG" alt=""></p>
+<h3 id="Add-a-Listener"><a href="#Add-a-Listener" class="headerlink" title="Add a Listener"></a>Add a Listener</h3><p>Before running we need to add a listener.Listener would show the request and the respense.</p>
+<p>Right click on the TestPlan &gt; Select Listener &gt; Add Results in a Tree Listener<br><img src="http://ot86l2rm2.bkt.clouddn.com/viewResultTree.PNG" alt=""></p>
+<h3 id="run-the-plan"><a href="#run-the-plan" class="headerlink" title="run the plan"></a>run the plan</h3><p>green means that you have got a success.<br>So here you see the request made was-</p>
+<p><strong>GET</strong><br> <a href="http://api.openweathermap.org/data/2.5/weather?q=suzhou&amp;appid=4e0f6be15c95005cfa5820249166033a" target="_blank" rel="external">http://api.openweathermap.org/data/2.5/weather?q=suzhou&amp;appid=4e0f6be15c95005cfa5820249166033a</a></p>
+<p><strong>Respons</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">:   <span class="string">"coord"</span>:</div><div class="line">:   &#123;</div><div class="line">:   :   <span class="string">"lon"</span>:<span class="number">120.62</span>,</div><div class="line">:   :   <span class="string">"lat"</span>:<span class="number">31.31</span></div><div class="line">:   &#125;,</div><div class="line">:   <span class="string">"weather"</span>:</div><div class="line">:   [</div><div class="line">:   :   &#123;</div><div class="line">:   :   :   <span class="string">"id"</span>:<span class="number">800</span>,</div><div class="line">:   :   :   <span class="string">"main"</span>:<span class="string">"Clear"</span>,</div><div class="line">:   :   :   <span class="string">"description"</span>:<span class="string">"clear sky"</span>,</div><div class="line">:   :   :   <span class="string">"icon"</span>:<span class="string">"01d"</span></div><div class="line">:   :   &#125;</div><div class="line">:   ],</div><div class="line">:   <span class="string">"base"</span>:<span class="string">"stations"</span>,</div><div class="line">:   <span class="string">"main"</span>:</div><div class="line">:   &#123;</div><div class="line">:   :   <span class="string">"temp"</span>:<span class="number">292.15</span>,</div><div class="line">:   :   <span class="string">"pressure"</span>:<span class="number">1027</span>,</div><div class="line">:   :   <span class="string">"humidity"</span>:<span class="number">42</span>,</div><div class="line">:   :   <span class="string">"temp_min"</span>:<span class="number">292.15</span>,</div><div class="line">:   :   <span class="string">"temp_max"</span>:<span class="number">292.15</span></div><div class="line">:   &#125;,</div><div class="line">:   <span class="string">"visibility"</span>:<span class="number">10000</span>,</div><div class="line">:   <span class="string">"wind"</span>:</div><div class="line">:   &#123;</div><div class="line">:   :   <span class="string">"speed"</span>:<span class="number">2</span>,</div><div class="line">:   :   <span class="string">"deg"</span>:<span class="number">170</span></div><div class="line">:   &#125;,</div><div class="line">:   <span class="string">"clouds"</span>:</div><div class="line">:   &#123;</div><div class="line">:   :   <span class="string">"all"</span>:<span class="number">0</span></div><div class="line">:   &#125;,</div><div class="line">:   <span class="string">"dt"</span>:<span class="number">1509418800</span>,</div><div class="line">:   <span class="string">"sys"</span>:</div><div class="line">:   &#123;</div><div class="line">:   :   <span class="string">"type"</span>:<span class="number">1</span>,</div><div class="line">:   :   <span class="string">"id"</span>:<span class="number">7452</span>,</div><div class="line">:   :   <span class="string">"message"</span>:<span class="number">0.0049</span>,</div><div class="line">:   :   <span class="string">"country"</span>:<span class="string">"CN"</span>,</div><div class="line">:   :   <span class="string">"sunrise"</span>:<span class="number">1509401534</span>,</div><div class="line">:   :   <span class="string">"sunset"</span>:<span class="number">1509440973</span></div><div class="line">:   &#125;,</div><div class="line">:   <span class="string">"id"</span>:<span class="number">1886760</span>,</div><div class="line">:   <span class="string">"name"</span>:<span class="string">"Suzhou"</span>,</div><div class="line">:   <span class="string">"cod"</span>:<span class="number">200</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://ot86l2rm2.bkt.clouddn.com/runThePlan.PNG" alt=""></p>
+<h3 id="Put-an-assertion"><a href="#Put-an-assertion" class="headerlink" title="Put an assertion"></a>Put an assertion</h3><p>in the respense you need to get type=1 for this test case to pass.</p>
+<p>Right click  on the Test plan and from the assertion list select Response Assertion.</p>
+<p>From the response select - “type”:1 and add this to the response assertion.</p>
+<p>Now run the test plan again.<br><img src="http://ot86l2rm2.bkt.clouddn.com/assertion.PNG" alt=""></p>
+<p>You can also add an assertion listener to see the assertion results.then run it again.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/25/Postman-API/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -424,7 +603,8 @@
 
       
         
-          <p>我们来讨论一个名为 Postman 的便利工具，它提供了一个用于制作和测试 API 调用的友好用户界面。 Postman 目前并未安装在所有电脑上。 如果您没有看到它，请访问邮递员网站并下载 MacOS 或 Chrome 应用程序。 Chrome 应用程序将很快启动。 您可以选择注册一个帐户，或者使用Postman 而不用帐号。 您也可以将其安装在家庭环境中。</p>
+          <p><strong>本篇文章翻译自：</strong> <a href="https://www.learnhowtoprogram.com/lessons/testing-api-calls-with-postman" target="_blank" rel="external">https://www.learnhowtoprogram.com/lessons/testing-api-calls-with-postman</a></p>
+<p>我们来讨论一个名为 Postman 的便利工具，它提供了一个用于制作和测试 API 调用的友好用户界面。 Postman 目前并未安装在所有电脑上。 如果您没有看到它，请访问邮递员网站并下载 MacOS 或 Chrome 应用程序。 Chrome 应用程序将很快启动。 您可以选择注册一个帐户，或者使用Postman 而不用帐号。 您也可以将其安装在家庭环境中。</p>
 <blockquote>
 <p>注意：Postman 不会有 CORS 问题，因为 Postman 中的API 调用不是源于浏览器。 如果您使用 JavaScript 从浏览器进行 API 调用，则应始终确认 API 实现 CORS 。</p>
 </blockquote>
@@ -1035,169 +1215,11 @@ table tr:first-of-type {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/11/你的同事已经下线/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sterling">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sterling’s Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/11/你的同事已经下线/" itemprop="url">你的同事已经下线</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-11T14:00:45+08:00">
-                2017-09-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/日志/" itemprop="url" rel="index">
-                    <span itemprop="name">日志</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/09/11/你的同事已经下线/" class="leancloud_visitors" data-flag-title="你的同事已经下线">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>日子一天一天过去了，不咸不淡。<br>从过完年的跳槽季开始，HR 的门槛就被踏烂了。<br>皮斌慧等一大批小伙伴陆续离职，倒也没有什么好伤感的。<br>转眼间，到了某A公司的盈利达到7年历史新低后，新一轮的裁员工作开始了，HR的门槛又烂了。<br>本次裁员的重灾区是我们手机部门，📱，作为一家传统的硬体PC制造商，跨足移动领域三年之久，不盈利的状况下势必要调整啊。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/11/你的同事已经下线/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1243,7 +1265,7 @@ table tr:first-of-type {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1254,7 +1276,7 @@ table tr:first-of-type {
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -1265,7 +1287,7 @@ table tr:first-of-type {
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
