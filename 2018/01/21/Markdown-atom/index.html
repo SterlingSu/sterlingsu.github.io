@@ -101,21 +101,21 @@
 
 
 
-<meta name="description" content="platformio-ide-terminal A terminal package for Atom, complete with themes, API and more for PlatformIO IDE. Fork of terminal-plus. You can install via apm: apm install platformio-ide-terminal">
+<meta name="description" content="platformio-ide-terminal A terminal package for Atom, complete with themes, API and more for PlatformIO IDE. Fork of terminal-plus. You can install via apm:1apm install platformio-ide-terminal">
 <meta name="keywords" content="Atom,Markdown,Github">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何用 Atom 撰写 Markdown 格式的博客文章？">
-<meta property="og:url" content="http://yoursite.com/2018/01/21/Markdown-atom/index.html">
+<meta property="og:url" content="http://sterlingsu.github.io/2018/01/21/Markdown-atom/index.html">
 <meta property="og:site_name" content="Sterling’s Blog">
-<meta property="og:description" content="platformio-ide-terminal A terminal package for Atom, complete with themes, API and more for PlatformIO IDE. Fork of terminal-plus. You can install via apm: apm install platformio-ide-terminal">
+<meta property="og:description" content="platformio-ide-terminal A terminal package for Atom, complete with themes, API and more for PlatformIO IDE. Fork of terminal-plus. You can install via apm:1apm install platformio-ide-terminal">
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com/1.gif">
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com/2.gif">
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com/18-1-22/72226273.jpg">
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com/18-1-22/94693564.jpg">
-<meta property="og:updated_time" content="2018-01-22T13:36:08.000Z">
+<meta property="og:updated_time" content="2018-01-22T13:46:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何用 Atom 撰写 Markdown 格式的博客文章？">
-<meta name="twitter:description" content="platformio-ide-terminal A terminal package for Atom, complete with themes, API and more for PlatformIO IDE. Fork of terminal-plus. You can install via apm: apm install platformio-ide-terminal">
+<meta name="twitter:description" content="platformio-ide-terminal A terminal package for Atom, complete with themes, API and more for PlatformIO IDE. Fork of terminal-plus. You can install via apm:1apm install platformio-ide-terminal">
 <meta name="twitter:image" content="http://ot86l2rm2.bkt.clouddn.com/1.gif">
 
 
@@ -145,7 +145,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/21/Markdown-atom/"/>
+  <link rel="canonical" href="http://sterlingsu.github.io/2018/01/21/Markdown-atom/"/>
 
 
 
@@ -328,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/21/Markdown-atom/">
+    <link itemprop="mainEntityOfPage" href="http://sterlingsu.github.io/2018/01/21/Markdown-atom/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sterling">
@@ -431,7 +431,7 @@
       
         <h2 id="platformio-ide-terminal"><a href="#platformio-ide-terminal" class="headerlink" title="platformio-ide-terminal"></a>platformio-ide-terminal</h2><hr>
 <p>A terminal package for Atom, complete with themes, API and more for PlatformIO IDE. Fork of terminal-plus.</p>
-<p>You can install via apm: apm install platformio-ide-terminal</p>
+<p>You can install via apm:<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apm <span class="keyword">install</span> platformio-ide-terminal</div></pre></td></tr></table></figure></p>
 <p><img src="http://ot86l2rm2.bkt.clouddn.com/1.gif" alt=""><br><a id="more"></a></p>
 <h2 id="安装Markdown相关Packages"><a href="#安装Markdown相关Packages" class="headerlink" title="安装Markdown相关Packages"></a>安装Markdown相关Packages</h2><hr>
 <p>点击 Preference 的左侧倒数第二项 + install，在搜索框中输入 markdown，依次安装一下几个 Package：</p>
@@ -448,10 +448,10 @@
 <p><img src="http://ot86l2rm2.bkt.clouddn.com/18-1-22/72226273.jpg" alt=""></p>
 <h2 id="⌘b、⌘i-快捷键设置"><a href="#⌘b、⌘i-快捷键设置" class="headerlink" title="⌘b、⌘i 快捷键设置"></a>⌘b、⌘i 快捷键设置</h2><hr>
 <p>在 Preference 中点击左侧第二项 Keybindings —keymap.cson 文件中，粘贴如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"># for markdown-writer</div><div class="line">&quot;.platform-darwin atom-text-editor:not([mini])&quot;:</div><div class="line">  &quot;shift-cmd-K&quot;: &quot;markdown-writer:insert-link&quot;</div><div class="line">  &quot;shift-cmd-I&quot;: &quot;markdown-writer:insert-image&quot;</div><div class="line">  &quot;cmd-i&quot;:       &quot;markdown-writer:toggle-italic-text&quot;</div><div class="line">  &quot;cmd-b&quot;:       &quot;markdown-writer:toggle-bold-text&quot;</div><div class="line">  &quot;cmd-&apos;&quot;:       &quot;markdown-writer:toggle-code-text&quot;</div><div class="line">  &quot;cmd-k&quot;:       &quot;markdown-writer:toggle-keystroke-text&quot;</div><div class="line">  &quot;cmd-h&quot;:       &quot;markdown-writer:toggle-strikethrough-text&quot;</div><div class="line">  &apos;cmd-&gt;&apos;:       &quot;markdown-writer:toggle-blockquote&quot;</div><div class="line">  &apos;cmd-&quot;&apos;:       &quot;markdown-writer:toggle-codeblock-text&quot;</div><div class="line">  &quot;ctrl-alt-1&quot;:  &quot;markdown-writer:toggle-h1&quot;</div><div class="line">  &quot;ctrl-alt-2&quot;:  &quot;markdown-writer:toggle-h2&quot;</div><div class="line">  &quot;ctrl-alt-3&quot;:  &quot;markdown-writer:toggle-h3&quot;</div><div class="line">  &quot;ctrl-alt-4&quot;:  &quot;markdown-writer:toggle-h4&quot;</div><div class="line">  &quot;ctrl-alt-5&quot;:  &quot;markdown-writer:toggle-h5&quot;</div><div class="line">  &quot;shift-cmd-O&quot;: &quot;markdown-writer:toggle-ol&quot;</div><div class="line">  &quot;shift-cmd-U&quot;: &quot;markdown-writer:toggle-ul&quot;</div><div class="line">  &quot;cmd-j cmd-p&quot;: &quot;markdown-writer:jump-to-previous-heading&quot;</div><div class="line">  &quot;cmd-j cmd-n&quot;: &quot;markdown-writer:jump-to-next-heading&quot;</div><div class="line">  &quot;cmd-j cmd-d&quot;: &quot;markdown-writer:jump-to-reference-definition&quot;</div><div class="line">  &quot;cmd-j cmd-t&quot;: &quot;markdown-writer:jump-to-next-table-cell&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># for markdown-writer</span></div><div class="line"><span class="string">".platform-darwin atom-text-editor:not([mini])"</span>:</div><div class="line">  <span class="string">"shift-cmd-K"</span>: <span class="string">"markdown-writer:insert-link"</span></div><div class="line">  <span class="string">"shift-cmd-I"</span>: <span class="string">"markdown-writer:insert-image"</span></div><div class="line">  <span class="string">"cmd-i"</span>:       <span class="string">"markdown-writer:toggle-italic-text"</span></div><div class="line">  <span class="string">"cmd-b"</span>:       <span class="string">"markdown-writer:toggle-bold-text"</span></div><div class="line">  <span class="string">"cmd-'"</span>:       <span class="string">"markdown-writer:toggle-code-text"</span></div><div class="line">  <span class="string">"cmd-k"</span>:       <span class="string">"markdown-writer:toggle-keystroke-text"</span></div><div class="line">  <span class="string">"cmd-h"</span>:       <span class="string">"markdown-writer:toggle-strikethrough-text"</span></div><div class="line">  'cmd-&gt;':       <span class="string">"markdown-writer:toggle-blockquote"</span></div><div class="line">  'cmd-<span class="string">"':       "</span>markdown-<span class="built_in">writer</span>:toggle-codeblock-text<span class="string">"</span></div><div class="line"><span class="string">  "</span>ctrl-alt<span class="number">-1</span><span class="string">":  "</span>markdown-<span class="built_in">writer</span>:toggle-h1<span class="string">"</span></div><div class="line"><span class="string">  "</span>ctrl-alt<span class="number">-2</span><span class="string">":  "</span>markdown-<span class="built_in">writer</span>:toggle-h2<span class="string">"</span></div><div class="line"><span class="string">  "</span>ctrl-alt<span class="number">-3</span><span class="string">":  "</span>markdown-<span class="built_in">writer</span>:toggle-h3<span class="string">"</span></div><div class="line"><span class="string">  "</span>ctrl-alt<span class="number">-4</span><span class="string">":  "</span>markdown-<span class="built_in">writer</span>:toggle-h4<span class="string">"</span></div><div class="line"><span class="string">  "</span>ctrl-alt<span class="number">-5</span><span class="string">":  "</span>markdown-<span class="built_in">writer</span>:toggle-h5<span class="string">"</span></div><div class="line"><span class="string">  "</span>shift-cmd-O<span class="string">": "</span>markdown-<span class="built_in">writer</span>:toggle-ol<span class="string">"</span></div><div class="line"><span class="string">  "</span>shift-cmd-U<span class="string">": "</span>markdown-<span class="built_in">writer</span>:toggle-ul<span class="string">"</span></div><div class="line"><span class="string">  "</span>cmd-j cmd-p<span class="string">": "</span>markdown-<span class="built_in">writer</span>:jump-to-previous-heading<span class="string">"</span></div><div class="line"><span class="string">  "</span>cmd-j cmd-n<span class="string">": "</span>markdown-<span class="built_in">writer</span>:jump-to-next-heading<span class="string">"</span></div><div class="line"><span class="string">  "</span>cmd-j cmd-d<span class="string">": "</span>markdown-<span class="built_in">writer</span>:jump-to-reference-definition<span class="string">"</span></div><div class="line"><span class="string">  "</span>cmd-j cmd-t<span class="string">": "</span>markdown-<span class="built_in">writer</span>:jump-to-next-table-cell<span class="string">"</span></div></pre></td></tr></table></figure>
 <h2 id="使用Markdown-写文字并发布"><a href="#使用Markdown-写文字并发布" class="headerlink" title="使用Markdown 写文字并发布"></a>使用Markdown 写文字并发布</h2><p>cd 进入 ~/documents/blog/source</p>
 <p><img src="http://ot86l2rm2.bkt.clouddn.com/18-1-22/94693564.jpg" alt=""></p>
-<p>然后在输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">atom .</div></pre></td></tr></table></figure></p>
+<p>然后在输入命令：<br><figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">atom .</div></pre></td></tr></table></figure></p>
 <p>进而用 Atom 打开当前目录中的所有文件。</p>
 <p>在书写 Markdown 文档的时候，随时可以用 ⇧⌃m （Shift+Control+M）呼出预览，甚至可以实时更新预览。</p>
 <ul>
