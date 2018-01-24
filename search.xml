@@ -531,6 +531,31 @@ table tr:first-of-type {
     </entry>
     
     <entry>
+      <title><![CDATA[图片测试-七牛云存储外链]]></title>
+      <url>/posts/fccf7a42/</url>
+      <content type="html"><![CDATA[<p><img src="http://ot86l2rm2.bkt.clouddn.com/test1.jpeg" alt="test"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Test </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> testing </tag>
+            
+            <tag> appium </tag>
+            
+            <tag> ster </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[自动化测试之monkeyrunner]]></title>
       <url>/posts/28eaaa9a/</url>
       <content type="html"><![CDATA[<h2 id="Monkeyrunner简介"><a href="#Monkeyrunner简介" class="headerlink" title="Monkeyrunner简介"></a>Monkeyrunner简介</h2><p>monkeyrunner即android SDK中自带的工具之一，此工具提供API可按制android设备或模拟器。</p>
@@ -608,31 +633,6 @@ table tr:first-of-type {
 
 <span class="label default">default</span><br><br><span class="label primary">primary</span><br><br><span class="label success">success</span><br><br><span class="label info">info</span><br><br><span class="label warning">warning</span><br><br><span class="label danger">danger</span>
 <p><a href="https://almostover.ru/2016-01/hexo-theme-next-test/#" target="_blank" rel="external">Note,Button,Label Test</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> Test </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> testing </tag>
-            
-            <tag> appium </tag>
-            
-            <tag> ster </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[图片测试-七牛云存储外链]]></title>
-      <url>/posts/fccf7a42/</url>
-      <content type="html"><![CDATA[<p><img src="http://ot86l2rm2.bkt.clouddn.com/test1.jpeg" alt="test"></p>
 ]]></content>
       
         <categories>
