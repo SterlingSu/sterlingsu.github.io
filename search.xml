@@ -3,6 +3,83 @@
   
     
     <entry>
+      <title><![CDATA[DialogFlow Bot：旅游景点门票订购机器人]]></title>
+      <url>/posts/494eecc8/</url>
+      <content type="html"><![CDATA[<iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/cbea187f-9c6f-4b0c-a209-86d509d0e7eb"></iframe>
+
+<a id="more"></a>
+<h3 id="Bot-簡單介紹"><a href="#Bot-簡單介紹" class="headerlink" title="Bot 簡單介紹"></a>Bot 簡單介紹</h3><p>該支 Bot 主要實現簡單的景點門票訂購功能。點擊進入–&gt; <a href="https://bot.dialogflow.com/cbea187f-9c6f-4b0c-a209-86d509d0e7eb" target="_blank" rel="external">斯特林訂票服務中心</a></p>
+<p>四條旅遊觀光路線分別對應 <strong>景觀園林、古跡遺址、田園度假、水鄉古鎮</strong>。每條觀光路線中包含對應的旅遊景點如下：</p>
+<p><img src="http://ot86l2rm2.bkt.clouddn.com//18-3-6/60866765.jpg" alt=""></p>
+<p>同時 <strong>@Views</strong> 包含 @Gardens:Gardens、@Historic_interest:Historic_interest、@Ancient_town:Ancient_town、@Ancient_town:Ancient_town 四個 Entities。使得 User 可以任意選擇不同路線中的任意景點搭配組合。</p>
+<p><strong>建立的 Entities</strong></p>
+<p><img src="http://ot86l2rm2.bkt.clouddn.com//18-3-6/60983567.jpg" alt=""></p>
+<p><strong>建立的 Intents</strong></p>
+<p><img src="http://ot86l2rm2.bkt.clouddn.com//18-3-6/34783394.jpg" alt=""></p>
+<h3 id="實現流程"><a href="#實現流程" class="headerlink" title="實現流程"></a>實現流程</h3><ul>
+<li>用戶需求引導。User 進入後，會被詢問是否需要訂票。打招呼或者直接表明訂票會打中該 Intent。</li>
+<li>觀光主題選擇。1）可以選擇 同一主題下的單個景點 / 兩個景點 / 三個景點 。 2）可以選擇不同主題下的單個景點 / 兩個景點 / 三個景點 。</li>
+<li>訂單元素生成。通過詢問的方式，獲取用戶的 <strong>旅遊景點</strong> $$Views / <strong>門票張數</strong> $Number  / <strong>出行日期</strong> $Date</li>
+<li>訂單確認退出。</li>
+</ul>
+<p>流程圖詳情如下：</p>
+<p><img src="http://ot86l2rm2.bkt.clouddn.com//18-3-6/98720350.jpg" alt=""></p>
+<h3 id="使用演示"><a href="#使用演示" class="headerlink" title="使用演示"></a>使用演示</h3><p><a href="https://bot.dialogflow.com/cbea187f-9c6f-4b0c-a209-86d509d0e7eb" target="_blank" rel="external">斯特林訂票服務中心</a></p>
+<h3 id="語句分析"><a href="#語句分析" class="headerlink" title="語句分析"></a>語句分析</h3><hr>
+<ul>
+<li>常規問法 1<br>Intent-Welcome： 你好。/ 你 / 好 / 你好 / 你好！/ 在吗？/ hello / hi / 您好</li>
+<li>非常規問法 1<br>nh / 你好 / NH / 你_好 / 你–好 / hhhh</li>
+</ul>
+<hr>
+<p> <strong><em>您好，欢迎使用斯特林订票系统。我是机器人小林，请问有什么可以帮到您？</em></strong></p>
+<ul>
+<li>常規说法 2<br>Intent-BeginOrder : 訂票 / 給我張票 / 我要門票 / 門票 / 票</li>
+<li>非常規说法 2<br>dingpiao / menpiao / </li>
+</ul>
+<hr>
+<p><strong><em>您好！😏 本季主推四大觀光主題：1.景觀園林 2.古跡遺址 3.田園度假 4.水鄉古鎮 每條路線都有 N 種景點供您選擇，請問最感興趣的是？（建議快捷回復數字）</em></strong></p>
+<ul>
+<li>常規说法 3<br>景觀園林 / 景觀 / 園林 / 1 </li>
+<li>非常規说法 3<br>没有我想去的<br>5       //無法對該異常輸入做約束<br><img src="http://ot86l2rm2.bkt.clouddn.com//18-3-7/81254859.jpg" alt=""><br>我想去蘇州耦園和網師園      //直接回復具體的景點信息則會進入</li>
+</ul>
+<hr>
+<p><strong><em>👌 景觀園林 有以下景點：拙政園 /獅子林 / 虎丘 / 留園 / 啟園 / 網師園 / 蘇州耦園 / 定園 ，請選擇您想去的景點是：</em></strong></p>
+<ul>
+<li><p>常規說法 4<br>組合一：@Views:Views-1<br>組合二：@Views:Views-1 和 @Views:Views-2<br>組合三：@Views:Views-1  @Views:Views-2 @Views:Views-3 （目前最多支援輸入3個景點）</p>
+<p><img src="http://ot86l2rm2.bkt.clouddn.com//18-3-6/61615766.jpg" alt=""></p>
+</li>
+</ul>
+<hr>
+<p><strong><em>您要去的景點是： $Views ,  請輸入所需門票的數量：</em></strong></p>
+<ul>
+<li>常規說法 5<br>1<br>1張<br>一張<br>1 4 9<br>一張 四張 九張<br>拙政園門票一張<br>請給我一張去木瀆古鎮的門票</li>
+<li>非常规说法 5<br>各来三张 //不支援</li>
+</ul>
+<hr>
+<p><strong><em>您所需的门票数量是： $number   张，请输入您的出行时间(YYYY-MM-DD)：</em></strong></p>
+<ul>
+<li>常規說法 6<br>2018-8-7 / 2019-6-7<br>今天 / 明天/ 後天<br>下周一 / 下周二 / 下个星期</li>
+</ul>
+<p>###結論###<br>在詢問 User 景點數量和時間的 Intent 中，因為對應不同景點處對的 Responses,要使得用戶輸入的景點數量與response回復相匹配，（當輸入一個景點時，打中 Response 中的第一句，輸入兩個景點時，打中 Response 中的第二句，以此類推見下圖）故無法對 parameters 中的各項參數做 required 的限制。（若勾選，無法滿足所有條件，會一直詢問景點）所以，當用戶有錯誤輸入時候，只能重頭來過。無法跳出提示，使得用戶繼續輸入。</p>
+<p><img src="http://ot86l2rm2.bkt.clouddn.com//18-3-7/14616445.jpg" alt=""></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Dialogflow </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Bot </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[如何用 Atom 撰写 Markdown 格式的博客文章？]]></title>
       <url>/posts/572b3c13/</url>
       <content type="html"><![CDATA[<h2 id="platformio-ide-terminal"><a href="#platformio-ide-terminal" class="headerlink" title="platformio-ide-terminal"></a>platformio-ide-terminal</h2><hr>
@@ -102,51 +179,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Postman 测试 API 调用 OpenWeatherMap 查询各个城市天气]]></title>
-      <url>/posts/3f52e4fc/</url>
-      <content type="html"><![CDATA[<p><strong>本篇文章翻译自：</strong> <a href="https://www.learnhowtoprogram.com/lessons/testing-api-calls-with-postman" target="_blank" rel="external">https://www.learnhowtoprogram.com/lessons/testing-api-calls-with-postman</a></p>
-<p>我们来讨论一个名为 Postman 的便利工具，它提供了一个用于制作和测试 API 调用的友好用户界面。 Postman 目前并未安装在所有电脑上。 如果您没有看到它，请访问邮递员网站并下载 MacOS 或 Chrome 应用程序。 Chrome 应用程序将很快启动。 您可以选择注册一个帐户，或者使用Postman 而不用帐号。 您也可以将其安装在家庭环境中。</p>
-<blockquote>
-<p>注意：Postman 不会有 CORS 问题，因为 Postman 中的API 调用不是源于浏览器。 如果您使用 JavaScript 从浏览器进行 API 调用，则应始终确认 API 实现 CORS 。</p>
-</blockquote>
-<a id="more"></a>
-<p>让我们来看看在 Postman 中进行 API 调用的基础知识。 例如，我们将在 Open Weather API 中查询 SuZhou 的天气情况。</p>
-<h3 id="API-Keys"><a href="#API-Keys" class="headerlink" title="API Keys"></a>API Keys</h3><p>首先，我们需要从 Open Weather API  (<a href="https://openweathermap.org/api" target="_blank" rel="external">https://openweathermap.org/api</a>) 获得一个 API Key。 这是一个特殊的代码，允许我们请求数据，并将我们在应用程序中的任何请求与我们拥有的帐户相关联。 除此之外，这有助于 API 拥有者确保人员和应用程序不会因为不必要的大量请求而陷入困境。</p>
-<p>您可以通过在注册页面上创建一个基本帐户来快速获得免费的 Open Weather API 密钥。 成功创建帐户后，您可以在用户信息板的 API 密钥分区中锁定您的 API 密钥。 保持这个关键的方便，我们会在短时间内使用它！</p>
-<h3 id="Using-Postman"><a href="#Using-Postman" class="headerlink" title="Using Postman"></a>Using Postman</h3><p>现在我们有一个 API Keys，我们来用它来测试 Postman 中的一个 API 调用。 现在打开程序，你应该看到这样的东西： </p>
-<p><img src="http://ot86l2rm2.bkt.clouddn.com/17-10-30/32222735.jpg" alt=""></p>
-<ol>
-<li>我们选择我们想要的那种请求。 在这种情况下，这是一个 GET 请求，因为我们要求从 Open Weather API 接收数据。<br></li>
-<li>我们可以输入没有查询字符串的 API URL。 对于此调用，URL为<a href="http://api.openweathermap.org/data/2.5/weather。" target="_blank" rel="external">http://api.openweathermap.org/data/2.5/weather。</a> 然后，您可以单击 Params按钮添加参数作为键值对。 这里我们添加了 q 和 appid 以及相应的值。 （在上面的示例中，appid 已被删除;但请确保将您刚才收到的唯一 API 密钥放在这里！）您也可以直接在 URL 中输入参数，单独添加参数可以更容易保持组织（避免打字错误）。<br></li>
-<li>单击 Headers 选项卡添加任何标题。 我们在这里添加了一个 “Accept：application / json”标头。 在标题右侧，有一个“body”选项卡。 它是灰色的，因为这是一个 GET 请求，但是如果您正在进行 POST 或 PUT 请求，则可以指定请求正文。 还要注意标题左边的授权标签。 您可以在此添加 OAuth 等授权。<br></li>
-<li>这是您将在其中找到伴随响应的 HTTP 状态代码。 该调用返回 200 OK 状态。<br></li>
-<li>JSON 格式可以以 “pretty” 的形式返回。 这使得读取 JSON 响应非常容易，看看它是如何嵌套的！<br></li>
-<li>您可以使用选项卡一次使用多个API调用。<br></li>
-<li>发送按钮是不言自明的。 配置完呼叫后，单击发送以发出请求。<br></li>
-<li>您甚至可以保存API调用以供将来使用。 这在多天项目工作时特别有用。<br><br><img src="http://ot86l2rm2.bkt.clouddn.com/17-10-30/87237451.jpg" alt=""></li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> Postman </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> API </tag>
-            
-            <tag> weather </tag>
-            
-            <tag> Postman </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Python 调用和风天气 API 查询各个城市天气]]></title>
       <url>/posts/a519ebdd/</url>
       <content type="html"><![CDATA[<p>和风天气 API 接口介绍 <a href="https://www.heweather.com/" target="_blank" rel="external">https://www.heweather.com/</a></p>
@@ -219,6 +251,51 @@
             <tag> weather </tag>
             
             <tag> Python </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Postman 测试 API 调用 OpenWeatherMap 查询各个城市天气]]></title>
+      <url>/posts/3f52e4fc/</url>
+      <content type="html"><![CDATA[<p><strong>本篇文章翻译自：</strong> <a href="https://www.learnhowtoprogram.com/lessons/testing-api-calls-with-postman" target="_blank" rel="external">https://www.learnhowtoprogram.com/lessons/testing-api-calls-with-postman</a></p>
+<p>我们来讨论一个名为 Postman 的便利工具，它提供了一个用于制作和测试 API 调用的友好用户界面。 Postman 目前并未安装在所有电脑上。 如果您没有看到它，请访问邮递员网站并下载 MacOS 或 Chrome 应用程序。 Chrome 应用程序将很快启动。 您可以选择注册一个帐户，或者使用Postman 而不用帐号。 您也可以将其安装在家庭环境中。</p>
+<blockquote>
+<p>注意：Postman 不会有 CORS 问题，因为 Postman 中的API 调用不是源于浏览器。 如果您使用 JavaScript 从浏览器进行 API 调用，则应始终确认 API 实现 CORS 。</p>
+</blockquote>
+<a id="more"></a>
+<p>让我们来看看在 Postman 中进行 API 调用的基础知识。 例如，我们将在 Open Weather API 中查询 SuZhou 的天气情况。</p>
+<h3 id="API-Keys"><a href="#API-Keys" class="headerlink" title="API Keys"></a>API Keys</h3><p>首先，我们需要从 Open Weather API  (<a href="https://openweathermap.org/api" target="_blank" rel="external">https://openweathermap.org/api</a>) 获得一个 API Key。 这是一个特殊的代码，允许我们请求数据，并将我们在应用程序中的任何请求与我们拥有的帐户相关联。 除此之外，这有助于 API 拥有者确保人员和应用程序不会因为不必要的大量请求而陷入困境。</p>
+<p>您可以通过在注册页面上创建一个基本帐户来快速获得免费的 Open Weather API 密钥。 成功创建帐户后，您可以在用户信息板的 API 密钥分区中锁定您的 API 密钥。 保持这个关键的方便，我们会在短时间内使用它！</p>
+<h3 id="Using-Postman"><a href="#Using-Postman" class="headerlink" title="Using Postman"></a>Using Postman</h3><p>现在我们有一个 API Keys，我们来用它来测试 Postman 中的一个 API 调用。 现在打开程序，你应该看到这样的东西： </p>
+<p><img src="http://ot86l2rm2.bkt.clouddn.com/17-10-30/32222735.jpg" alt=""></p>
+<ol>
+<li>我们选择我们想要的那种请求。 在这种情况下，这是一个 GET 请求，因为我们要求从 Open Weather API 接收数据。<br></li>
+<li>我们可以输入没有查询字符串的 API URL。 对于此调用，URL为<a href="http://api.openweathermap.org/data/2.5/weather。" target="_blank" rel="external">http://api.openweathermap.org/data/2.5/weather。</a> 然后，您可以单击 Params按钮添加参数作为键值对。 这里我们添加了 q 和 appid 以及相应的值。 （在上面的示例中，appid 已被删除;但请确保将您刚才收到的唯一 API 密钥放在这里！）您也可以直接在 URL 中输入参数，单独添加参数可以更容易保持组织（避免打字错误）。<br></li>
+<li>单击 Headers 选项卡添加任何标题。 我们在这里添加了一个 “Accept：application / json”标头。 在标题右侧，有一个“body”选项卡。 它是灰色的，因为这是一个 GET 请求，但是如果您正在进行 POST 或 PUT 请求，则可以指定请求正文。 还要注意标题左边的授权标签。 您可以在此添加 OAuth 等授权。<br></li>
+<li>这是您将在其中找到伴随响应的 HTTP 状态代码。 该调用返回 200 OK 状态。<br></li>
+<li>JSON 格式可以以 “pretty” 的形式返回。 这使得读取 JSON 响应非常容易，看看它是如何嵌套的！<br></li>
+<li>您可以使用选项卡一次使用多个API调用。<br></li>
+<li>发送按钮是不言自明的。 配置完呼叫后，单击发送以发出请求。<br></li>
+<li>您甚至可以保存API调用以供将来使用。 这在多天项目工作时特别有用。<br><br><img src="http://ot86l2rm2.bkt.clouddn.com/17-10-30/87237451.jpg" alt=""></li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> Postman </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> API </tag>
+            
+            <tag> weather </tag>
+            
+            <tag> Postman </tag>
             
         </tags>
         
@@ -725,31 +802,6 @@ table tr:first-of-type {
     </entry>
     
     <entry>
-      <title><![CDATA[图片测试-七牛云存储外链]]></title>
-      <url>/posts/fccf7a42/</url>
-      <content type="html"><![CDATA[<p><img src="http://ot86l2rm2.bkt.clouddn.com/test1.jpeg" alt="test"></p>
-]]></content>
-      
-        <categories>
-            
-            <category> Test </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> testing </tag>
-            
-            <tag> appium </tag>
-            
-            <tag> ster </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[代码测试]]></title>
       <url>/posts/f8915431/</url>
       <content type="html"><![CDATA[<h2 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a>代码测试</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;  </span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span>   <span class="comment">/*  辗转相除法求最大公约数 */</span>   </span></div><div class="line"><span class="function"></span>&#123;   </div><div class="line">    <span class="keyword">int</span> m, n, a, b, t, c;  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Input two integer numbers:\n"</span>);  </div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b);  </div><div class="line">    m=a;   n=b;  </div><div class="line">    <span class="keyword">while</span>(b!=<span class="number">0</span>)  <span class="comment">/* 余数不为0，继续相除，直到余数为0 */</span>   </div><div class="line">    &#123; c=a%b; a=b;  b=c;&#125;  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"The largest common divisor:%d\n"</span>, a);  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"The least common multiple:%d\n"</span>, m*n/a);  </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
@@ -783,6 +835,31 @@ table tr:first-of-type {
 
 
 
+]]></content>
+      
+        <categories>
+            
+            <category> Test </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> testing </tag>
+            
+            <tag> appium </tag>
+            
+            <tag> ster </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[图片测试-七牛云存储外链]]></title>
+      <url>/posts/fccf7a42/</url>
+      <content type="html"><![CDATA[<p><img src="http://ot86l2rm2.bkt.clouddn.com/test1.jpeg" alt="test"></p>
 ]]></content>
       
         <categories>
