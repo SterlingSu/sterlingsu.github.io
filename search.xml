@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[DialogFlow Bot：旅遊景點訂票機器人]]></title>
       <url>/posts/494eecc8/</url>
-      <content type="html"><![CDATA[&lt;iframe width=“350” height=”430” src=”<a href="https://console.dialogflow.com/api-client/demo/embedded/cbea187f-9c6f-4b0c-a209-86d509d0e7eb&quot;&gt;" target="_blank" rel="external">https://console.dialogflow.com/api-client/demo/embedded/cbea187f-9c6f-4b0c-a209-86d509d0e7eb&quot;&gt;</a>
+      <content type="html"><![CDATA[<iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/cbea187f-9c6f-4b0c-a209-86d509d0e7eb"></iframe>
 
 <a id="more"></a>
 <h3 id="Bot-簡單介紹"><a href="#Bot-簡單介紹" class="headerlink" title="Bot 簡單介紹"></a>Bot 簡單介紹</h3><p>該支 Bot 主要實現簡單的景點門票訂購功能。點擊進入–&gt; <a href="https://bot.dialogflow.com/cbea187f-9c6f-4b0c-a209-86d509d0e7eb" target="_blank" rel="external">斯特林訂票服務中心</a></p>
@@ -707,29 +707,6 @@ table tr:first-of-type {
     </entry>
     
     <entry>
-      <title><![CDATA[代码测试]]></title>
-      <url>/posts/f8915431/</url>
-      <content type="html"><![CDATA[<h2 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a>代码测试</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;  </span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span>   <span class="comment">/*  辗转相除法求最大公约数 */</span>   </span></div><div class="line"><span class="function"></span>&#123;   </div><div class="line">    <span class="keyword">int</span> m, n, a, b, t, c;  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Input two integer numbers:\n"</span>);  </div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b);  </div><div class="line">    m=a;   n=b;  </div><div class="line">    <span class="keyword">while</span>(b!=<span class="number">0</span>)  <span class="comment">/* 余数不为0，继续相除，直到余数为0 */</span>   </div><div class="line">    &#123; c=a%b; a=b;  b=c;&#125;  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"The largest common divisor:%d\n"</span>, a);  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"The least common multiple:%d\n"</span>, m*n/a);  </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-]]></content>
-      
-        <categories>
-            
-            <category> Test </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> testing </tag>
-            
-            <tag> appium </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[图片测试-七牛云存储外链]]></title>
       <url>/posts/fccf7a42/</url>
       <content type="html"><![CDATA[<p><img src="http://ot86l2rm2.bkt.clouddn.com/test1.jpeg" alt="test"></p>
@@ -749,6 +726,29 @@ table tr:first-of-type {
             <tag> appium </tag>
             
             <tag> ster </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[代码测试]]></title>
+      <url>/posts/f8915431/</url>
+      <content type="html"><![CDATA[<h2 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a>代码测试</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;  </span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span>   <span class="comment">/*  辗转相除法求最大公约数 */</span>   </span></div><div class="line"><span class="function"></span>&#123;   </div><div class="line">    <span class="keyword">int</span> m, n, a, b, t, c;  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Input two integer numbers:\n"</span>);  </div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b);  </div><div class="line">    m=a;   n=b;  </div><div class="line">    <span class="keyword">while</span>(b!=<span class="number">0</span>)  <span class="comment">/* 余数不为0，继续相除，直到余数为0 */</span>   </div><div class="line">    &#123; c=a%b; a=b;  b=c;&#125;  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"The largest common divisor:%d\n"</span>, a);  </div><div class="line">    <span class="built_in">printf</span>(<span class="string">"The least common multiple:%d\n"</span>, m*n/a);  </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> Test </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> testing </tag>
+            
+            <tag> appium </tag>
             
         </tags>
         
