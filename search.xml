@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[DialogFlow Bot：旅遊景點訂票機器人]]></title>
       <url>/posts/494eecc8/</url>
-      <content type="html"><![CDATA[<iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/cbea187f-9c6f-4b0c-a209-86d509d0e7eb"></iframe>
+      <content type="html"><![CDATA[&lt;iframe width=“850” height=”430” src=”<a href="https://console.dialogflow.com/api-client/demo/embedded/cbea187f-9c6f-4b0c-a209-86d509d0e7eb&quot;&gt;" target="_blank" rel="external">https://console.dialogflow.com/api-client/demo/embedded/cbea187f-9c6f-4b0c-a209-86d509d0e7eb&quot;&gt;</a>
 
 <a id="more"></a>
 <h3 id="Bot-簡單介紹"><a href="#Bot-簡單介紹" class="headerlink" title="Bot 簡單介紹"></a>Bot 簡單介紹</h3><p>該支 Bot 主要實現簡單的景點門票訂購功能。點擊進入–&gt; <a href="https://bot.dialogflow.com/cbea187f-9c6f-4b0c-a209-86d509d0e7eb" target="_blank" rel="external">斯特林訂票服務中心</a></p>
