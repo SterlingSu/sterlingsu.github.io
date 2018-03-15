@@ -114,7 +114,7 @@
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com//18-3-7/81254859.jpg">
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com//18-3-6/61615766.jpg">
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com//18-3-7/14616445.jpg">
-<meta property="og:updated_time" content="2018-03-15T05:32:14.000Z">
+<meta property="og:updated_time" content="2018-03-15T05:52:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DialogFlow Bot：旅遊景點訂票機器人">
 <meta name="twitter:image" content="http://ot86l2rm2.bkt.clouddn.com//18-3-6/60866765.jpg">
@@ -480,7 +480,6 @@
 <p> <strong><em>我要一张明天去枫桥两张后天去寒山寺的门票</em></strong><br> 缺省条件的不同问法如下：<br><img src="http://ot86l2rm2.bkt.clouddn.com/18-3-15/60138064.jpg" alt=""></p>
 <iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/cbea187f-9c6f-4b0c-a209-86d509d0e7eb"></iframe>
 
-
 <hr>
 <p> <strong><em>有什么好玩的地方推荐呢？</em></strong></p>
 <iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/cbea187f-9c6f-4b0c-a209-86d509d0e7eb"></iframe>
@@ -489,14 +488,17 @@
 <p><strong><em>您好！😏 本季主推四大觀光主題：1.景觀園林 2.古跡遺址 3.田園度假 4.水鄉古鎮 每條路線都有 N 種景點供您選擇，請問最感興趣的是？（建議快捷回復數字）</em></strong></p>
 <p>   景觀園林 / 景觀 / 園林 / 1<br>   5       //無法對該異常輸入做約束<br><img src="http://ot86l2rm2.bkt.clouddn.com//18-3-7/81254859.jpg" alt=""></p>
 <p>  盘门 浪沧亭      //直接回復具體的景點信息則會進入</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/cbea187f-9c6f-4b0c-a209-86d509d0e7eb"></iframe></h2><p><strong><em>👌 景觀園林 有以下景點：拙政園 /獅子林 / 虎丘 / 留園 / 啟園 / 網師園 / 蘇州耦園 / 定園 ，請選擇您想去的景點是：</em></strong></p>
+<iframe width="350" height="430" src="https://console.dialogflow.com/api-client/demo/embedded/cbea187f-9c6f-4b0c-a209-86d509d0e7eb"></iframe>
+
+<hr>
+<p><strong><em>👌 景觀園林 有以下景點：拙政園 /獅子林 / 虎丘 / 留園 / 啟園 / 網師園 / 蘇州耦園 / 定園 ，請選擇您想去的景點是：</em></strong></p>
 <ul>
 <li><p>常規說法<br>組合一：@Views:Views-1<br>組合二：@Views:Views-1 和 @Views:Views-2<br>組合三：@Views:Views-1  @Views:Views-2 @Views:Views-3 （目前最多支援輸入3個景點）</p>
 <p><img src="http://ot86l2rm2.bkt.clouddn.com//18-3-6/61615766.jpg" alt=""></p>
 </li>
 </ul>
 <hr>
-<h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>在詢問 User 景點數量和時間的 Intent 中，因為對應不同景點處對的 Responses,要使得用戶輸入的景點數量與response回復相匹配，（當輸入一個景點時，打中 Response 中的第一句，輸入兩個景點時，打中 Response 中的第二句，以此類推見下圖）故無法對 parameters 中的各項參數做 required 的限制。（若勾選，無法滿足所有條件，會一直詢問景點）所以，當用戶有錯誤輸入時候，只能重頭來過。無法跳出提示，使得用戶繼續輸入。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>在詢問 User 景點數量和時間的 Intent 中，因為對應不同景點處對的 Responses,要使得用戶輸入的景點數量與response回復相匹配，（當輸入一個景點時，打中 Response 中的第一句，輸入兩個景點時，打中 Response 中的第二句，以此類推見下圖）故無法對 parameters 中的各項參數做 required 的限制。（若勾選，無法滿足所有條件，會一直詢問景點）所以，當用戶有錯誤輸入時候，只能重頭來過。無法跳出提示，使得用戶繼續輸入。</p>
 <p><img src="http://ot86l2rm2.bkt.clouddn.com//18-3-7/14616445.jpg" alt=""></p>
 
       
@@ -750,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bot-簡單介紹"><span class="nav-number">1.</span> <span class="nav-text">Bot 簡單介紹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试例句"><span class="nav-number">2.</span> <span class="nav-text">测试例句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#實現流程"><span class="nav-number">3.</span> <span class="nav-text">實現流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用演示"><span class="nav-number">4.</span> <span class="nav-text">使用演示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#語句分析"><span class="nav-number">5.</span> <span class="nav-text">語句分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number"></span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#結論"><span class="nav-number">1.</span> <span class="nav-text">結論</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bot-簡單介紹"><span class="nav-number">1.</span> <span class="nav-text">Bot 簡單介紹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试例句"><span class="nav-number">2.</span> <span class="nav-text">测试例句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#實現流程"><span class="nav-number">3.</span> <span class="nav-text">實現流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用演示"><span class="nav-number">4.</span> <span class="nav-text">使用演示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#語句分析"><span class="nav-number">5.</span> <span class="nav-text">語句分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
