@@ -114,7 +114,7 @@
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com//18-3-7/81254859.jpg">
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com//18-3-6/61615766.jpg">
 <meta property="og:image" content="http://ot86l2rm2.bkt.clouddn.com//18-3-7/14616445.jpg">
-<meta property="og:updated_time" content="2018-03-15T05:52:14.000Z">
+<meta property="og:updated_time" content="2018-03-15T07:27:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DialogFlow Bot：旅遊景點訂票機器人">
 <meta name="twitter:image" content="http://ot86l2rm2.bkt.clouddn.com//18-3-6/60866765.jpg">
@@ -493,9 +493,8 @@
 <hr>
 <p><strong><em>👌 景觀園林 有以下景點：拙政園 /獅子林 / 虎丘 / 留園 / 啟園 / 網師園 / 蘇州耦園 / 定園 ，請選擇您想去的景點是：</em></strong></p>
 <ul>
-<li><p>常規說法<br>組合一：@Views:Views-1<br>組合二：@Views:Views-1 和 @Views:Views-2<br>組合三：@Views:Views-1  @Views:Views-2 @Views:Views-3 （目前最多支援輸入3個景點）</p>
-<p><img src="http://ot86l2rm2.bkt.clouddn.com//18-3-6/61615766.jpg" alt=""></p>
-</li>
+<li>常規說法<br>組合一：@Views:Views-1<br>組合二：@Views:Views-1 和 @Views:Views-2<br>組合三：@Views:Views-1  @Views:Views-2 @Views:Views-3 （目前最多支援輸入3個景點）</li>
+<li>搭配說法<br>不同主题下的景點可以搭配去問<br>例如：我想去虎丘和寒山寺      //虎丘 屬於景觀園林， 寒山寺 屬於古跡遺址<br><img src="http://ot86l2rm2.bkt.clouddn.com//18-3-6/61615766.jpg" alt=""></li>
 </ul>
 <hr>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>在詢問 User 景點數量和時間的 Intent 中，因為對應不同景點處對的 Responses,要使得用戶輸入的景點數量與response回復相匹配，（當輸入一個景點時，打中 Response 中的第一句，輸入兩個景點時，打中 Response 中的第二句，以此類推見下圖）故無法對 parameters 中的各項參數做 required 的限制。（若勾選，無法滿足所有條件，會一直詢問景點）所以，當用戶有錯誤輸入時候，只能重頭來過。無法跳出提示，使得用戶繼續輸入。</p>
